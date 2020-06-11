@@ -5,7 +5,7 @@ import { Container } from './styles';
 
 import Header from '../../components/Header';
 
-const Listagem: React.FC = () => {
+const Listing: React.FC = () => {
   return (
     <>
       <Header nameButton="Voltar para Cadastro" />
@@ -13,7 +13,7 @@ const Listagem: React.FC = () => {
         <div className="content">
           <h1>Listagem</h1>
 
-          <div className="div-pesquisar">
+          <div className="search">
             <input type="text" placeholder="Pesquisar" />
             <button>
               <FiSearch />
@@ -25,4 +25,4 @@ const Listagem: React.FC = () => {
   );
 };
 
-export default Listagem;
+export default Listing;

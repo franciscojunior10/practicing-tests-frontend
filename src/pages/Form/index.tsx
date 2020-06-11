@@ -1,9 +1,10 @@
 import React from 'react';
+import InputMask from 'react-input-mask';
 
 import Header from '../../components/Header';
 import { Container } from './styles';
 
-const Formulario: React.FC = () => {
+const Form: React.FC = () => {
   return (
     <>
       <Header nameButton="Ir para Listagem" />
@@ -22,7 +23,7 @@ const Formulario: React.FC = () => {
             <div className="input-group">
               <div className="input">
                 <h5>CPF</h5>
-                <input required type="text" />
+                <InputMask mask="999.999.999-99" required type="text" />
               </div>
 
               <div className="input">
@@ -36,7 +37,7 @@ const Formulario: React.FC = () => {
             <div className="input-group">
               <div className="input">
                 <h5>CEP</h5>
-                <input required type="text" />
+                <InputMask mask="99.999-999" required type="text" />
               </div>
 
               <div className="input">
@@ -48,7 +49,7 @@ const Formulario: React.FC = () => {
             <div className="input-group">
               <div className="input">
                 <h5>Número</h5>
-                <input required type="text" />
+                <input required type="number" />
               </div>
 
               <div className="input">
@@ -70,4 +71,4 @@ const Formulario: React.FC = () => {
   );
 };
 
-export default Formulario;
+export default Form;

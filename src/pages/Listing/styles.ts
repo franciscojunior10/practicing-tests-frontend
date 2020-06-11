@@ -14,45 +14,20 @@ export const Container = styled.div`
     justify-content: center;
     flex-direction: column;
 
+    width: 900px;
     padding: 50px;
     background: #fdf2f1;
     border-radius: 5px;
   }
 
-  .content form h1 {
+  .content h1 {
     display: flex;
     justify-content: center;
   }
 
-  .content form h3 {
-    margin-top: 20px;
-    line-height: 40px;
-    color: #000000;
-  }
-
-  .content form h5 {
-    line-height: 40px;
-    color: #6c6c80;
-  }
-
-  .content form .input-group {
-    flex: 1;
-    display: flex;
-  }
-
-  .content form .input {
-    flex: 1;
-
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 24px;
-    margin-right: 20px;
-  }
-
-  .content form input[type='text'] {
+  .content input[type='text'] {
     flex: 1;
     background: #ffffff;
-    border-radius: 5px;
     border: 0;
     padding: 16px 24px;
     font-size: 16px;
@@ -60,24 +35,23 @@ export const Container = styled.div`
     width: 100%;
   }
 
-  .content form button {
-    margin-top: 40px;
-    width: 100%;
-    height: 60px;
-    background: #ff6363;
+  .content .search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+  }
+
+  .content .search button {
+    background: #ffffff;
     border: 0;
-    border-radius: 5px;
-    color: #ffffff;
+    height: 50px;
+    color: #6c6c80;
     font-weight: 700;
     display: inline-block;
     text-align: center;
     text-decoration: none;
     font-size: 18px;
-    line-height: 60px;
     transition: filter 0.2s;
-  }
-
-  .content form button:hover {
-    filter: brightness(90%);
   }
 `;
