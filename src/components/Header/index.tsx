@@ -10,7 +10,7 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ nameButton }) => {
   return (
     <Container>
-      <header className="header">
+      <header data-testid="header" className="header">
         <h3>TOUSER</h3>
 
         <div className="div-group">

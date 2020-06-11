@@ -13,7 +13,7 @@ const ModalEditUser: React.FC<ModalProps> = ({ isOpen, setIsOpen }) => {
   return (
     <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
       <Container>
-        <div className="content">
+        <div data-testid="modaledit" className="content">
           <form action="">
             <h1>Editar</h1>
 
