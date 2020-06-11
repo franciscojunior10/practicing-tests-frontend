@@ -3,14 +3,18 @@ import { Link } from 'react-router-dom';
 
 import { Container } from './styles';
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  nameButton: string;
+}
+
+const Header: React.FC<HeaderProps> = ({ nameButton }) => {
   return (
     <Container>
       <header className="header">
         <h3>TOUSER</h3>
 
         <div className="div-group">
-          <Link to="/listagem">Ir para Listagem</Link>
+          <Link to="/listagem">{nameButton}</Link>
 
           <Link to="/">Logout</Link>
         </div>

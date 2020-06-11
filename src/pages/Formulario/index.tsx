@@ -1,13 +1,12 @@
 import React from 'react';
 
 import Header from '../../components/Header';
-
 import { Container } from './styles';
 
 const Formulario: React.FC = () => {
   return (
     <>
-      <Header />
+      <Header nameButton="Ir para Listagem" />
       <Container>
         <div className="content">
           <form action="">
