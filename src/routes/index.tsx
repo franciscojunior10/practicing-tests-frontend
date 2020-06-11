@@ -7,13 +7,13 @@ import Formulario from '../pages/Formulario';
 import Listagem from '../pages/Listagem';
 
 const Routes: React.FC = () => {
-    return (
-        <Switch>
-            <Route path="/" exact component={Login}></Route>
-            <Route path="/formulario" exact component={Formulario}></Route>
-            <Route path="/listagem" exact component={Listagem}></Route>
-        </Switch>
-    );
+  return (
+    <Switch>
+      <Route path="/" exact component={Login}></Route>
+      <Route path="/formulario" exact component={Formulario}></Route>
+      <Route path="/listagem" exact component={Listagem}></Route>
+    </Switch>
+  );
 };
 
 export default Routes;
