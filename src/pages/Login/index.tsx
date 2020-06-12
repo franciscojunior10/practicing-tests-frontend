@@ -25,21 +25,25 @@ const Login: React.FC = () => {
   function handleLogin(event: FormEvent) {
     event.preventDefault();
 
-    if (password.length < 4) {
-      alert('Senha deve conter mais de 4 digítos');
-      return;
+    try {
+      if (password.length < 4) {
+        alert('Senha deve conter mais de 4 digítos.');
+        return;
+      }
+
+      if (!verifyEmail(email)) {
+        alert('E-mail inválido.');
+        return;
+      }
+
+      const tokenEncrypted = crypto.randomBytes(6).toString('hex');
+
+      localStorage.setItem('@tokenGenereted', tokenEncrypted);
+
+      history.push('/formulario');
+    } catch (error) {
+      alert('Falha ao fazer login, tente novamente.');
     }
-
-    if (!verifyEmail(email)) {
-      alert('E-mail invilado');
-      return;
-    }
-
-    const tokenEncrypted = crypto.randomBytes(6).toString('hex');
-
-    localStorage.setItem('@tokenGenereted', tokenEncrypted);
-
-    history.push('/formulario');
   }
 
   return (
