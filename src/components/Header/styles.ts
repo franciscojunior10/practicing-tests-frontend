@@ -20,5 +20,14 @@ export const Container = styled.div`
       margin-right: 30px;
       color: #ffffff;
     }
+
+    .div-group button {
+      background: #ff6363;
+      color: #ffffff;
+      border: 0;
+      display: inline-block;
+      text-align: center;
+      text-decoration: none;
+    }
   }
 `;
