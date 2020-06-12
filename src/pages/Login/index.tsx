@@ -1,6 +1,7 @@
 import React, { useState, useEffect, FormEvent } from 'react';
 import { useHistory } from 'react-router-dom';
 
+import crypto from 'crypto';
 import { Container } from './styles';
 
 const Login: React.FC = () => {
@@ -17,10 +18,26 @@ const Login: React.FC = () => {
     }
   }, [history]);
 
+  function verifyEmail(email: string) {
+    return !!email.match(/.+@.+/);
+  }
+
   function handleLogin(event: FormEvent) {
     event.preventDefault();
 
-    localStorage.setItem('@tokenGenereted', 'genereted');
+    if (password.length < 4) {
+      alert('Senha deve conter mais de 4 digítos');
+      return;
+    }
+
+    if (!verifyEmail(email)) {
+      alert('E-mail invilado');
+      return;
+    }
+
+    const tokenEncrypted = crypto.randomBytes(6).toString('hex');
+
+    localStorage.setItem('@tokenGenereted', tokenEncrypted);
 
     history.push('/formulario');
   }
