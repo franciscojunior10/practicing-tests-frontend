@@ -54,4 +54,16 @@ export const Container = styled.div`
     font-size: 18px;
     transition: filter 0.2s;
   }
+
+  .div-table {
+    margin-top: 30px;
+  }
+
+  .div-table .titles .th {
+    width: 100%;
+  }
+
+  .button {
+    text-decoration: none;
+  }
 `;
