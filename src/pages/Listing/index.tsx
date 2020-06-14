@@ -31,7 +31,7 @@ const Listing: React.FC = () => {
   }, []);
 
   function loadUsers() {
-    api.get('/').then(res => {
+    api.get('/?_sort=nome&_order=asc').then(res => {
       setUsers(res.data);
     });
   }
@@ -49,14 +49,19 @@ const Listing: React.FC = () => {
       const res = await api.get(`/?q=${nomeSearch}`);
       if (res.data.length !== 0) {
         setUsers(res.data);
+        setNomeSearch('');
       } else {
         addToast('Usuário não encontrado.', {
           appearance: 'info',
           autoDismiss: true,
         });
+        setNomeSearch('');
       }
     } catch (error) {
-      alert('erro');
+      addToast('Erro ao buscar usuário não encontrado, tente novamente', {
+        appearance: 'error',
+        autoDismiss: true,
+      });
     }
   }
 
@@ -138,6 +143,7 @@ const Listing: React.FC = () => {
               {users.map(handleUsersRow)}
             </table>
           </div>
+          {/* {users.length ? 0 : <h1 style={{ marginTop: '20px' }}>Nenhum usuário cadastrado.</h1>} */}
         </div>
         <ModalEditUser isOpen={modalOpen} setIsOpen={toggleModal} idUser={ID} />
       </Container>

@@ -18,12 +18,13 @@ interface ViaCep {
 
 const Form: React.FC = () => {
   const { addToast } = useToasts();
+
   const [nome, setNome] = useState<string>('');
   const [cpf, setCpf] = useState<string>('');
   const [email, setEmail] = useState<string>('');
-  const [cep, setCep] = useState<number | string>('');
+  const [cep, setCep] = useState<number>();
   const [rua, setRua] = useState<string>('');
-  const [numero, setNumero] = useState<number | string>('');
+  const [numero, setNumero] = useState<number>();
   const [bairro, setBairro] = useState<string>('');
   const [cidade, setCidade] = useState<string>('');
 
@@ -67,15 +68,6 @@ const Form: React.FC = () => {
       await api.post('/', data);
 
       addToast('Cadastro realizado com sucesso.', { appearance: 'success', autoDismiss: true });
-
-      setNome('');
-      setCpf('');
-      setEmail('');
-      setCep('');
-      setCidade('');
-      setBairro('');
-      setNumero('');
-      setRua('');
     } catch (error) {
       addToast('Erro ao fazer o cadastro, tente novamente.', {
         appearance: 'error',

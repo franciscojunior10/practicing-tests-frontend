@@ -1,6 +1,8 @@
 import React, { useState, FormEvent } from 'react';
 import InputMask from 'react-input-mask';
 
+import { useToasts } from 'react-toast-notifications';
+
 import Modal from '../Modal';
 import api from '../../services/api';
 
@@ -13,6 +15,8 @@ interface ModalEditProps {
 }
 
 const ModalEditUser: React.FC<ModalEditProps> = ({ isOpen, setIsOpen, idUser }) => {
+  const { addToast } = useToasts();
+
   const [nome, setNome] = useState<string>('');
   const [cpf, setCpf] = useState<string>('');
   const [email, setEmail] = useState<string>('');
@@ -27,7 +31,7 @@ const ModalEditUser: React.FC<ModalEditProps> = ({ isOpen, setIsOpen, idUser }) 
 
     try {
       if (!verifyEmail(email)) {
-        alert('E-mail inválido.');
+        addToast('E-mail inválido.', { appearance: 'error', autoDismiss: true });
         return;
       }
 
@@ -42,9 +46,19 @@ const ModalEditUser: React.FC<ModalEditProps> = ({ isOpen, setIsOpen, idUser }) 
 
       await api.put(`/${idUser}`, data);
 
-      alert('Cadastro editado realizado com sucesso.');
+      addToast('Cadastro editado realizado com sucesso.', {
+        appearance: 'success',
+        autoDismiss: true,
+      });
+      setNome('');
+      setCpf('');
+      setEmail('');
+      setCidade('');
     } catch (error) {
-      alert('Erro ao editar o cadastro, tente novamente.');
+      addToast('Erro ao editar o cadastro, tente novamente.', {
+        appearance: 'error',
+        autoDismiss: true,
+      });
     }
   }
 

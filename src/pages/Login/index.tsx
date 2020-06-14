@@ -50,7 +50,10 @@ const Login: React.FC = () => {
 
       history.push('/formulario');
     } catch (error) {
-      alert('Falha ao fazer login, tente novamente.');
+      addToast('Falha ao fazer login, tente novamente.', {
+        appearance: 'error',
+        autoDismiss: true,
+      });
     }
   }
 
