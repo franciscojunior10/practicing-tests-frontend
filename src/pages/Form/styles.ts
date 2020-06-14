@@ -30,7 +30,7 @@ export const Container = styled.div`
     color: #000000;
   }
 
-  .content form h5 {
+  .content form label {
     line-height: 40px;
     color: #6c6c80;
   }

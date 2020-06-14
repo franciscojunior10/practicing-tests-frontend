@@ -30,9 +30,8 @@ const Form: React.FC = () => {
 
   function handleSelectCEP(event: ChangeEvent<HTMLInputElement>) {
     const cep = event.target.value.replace('.', '').replace('-', '');
-
+    setCep(Number(cep));
     axios.get<ViaCep>(`https://viacep.com.br/ws/${cep}/json/`).then(res => {
-      setCep(Number(cep));
       setCidade(res.data.localidade);
       setBairro(res.data.bairro);
       setRua(res.data.logradouro);
@@ -51,7 +50,6 @@ const Form: React.FC = () => {
         addToast('E-mail inválido.', { appearance: 'error', autoDismiss: true });
         return;
       }
-
       const data = {
         nome,
         cpf,
@@ -80,15 +78,16 @@ const Form: React.FC = () => {
     <>
       <Header nameButton="Ir para Listagem" namePagina="listagem" />
       <Container>
-        <div className="content">
+        <div data-testid="form" className="content">
           <form onSubmit={handleRegister}>
             <h1>Cadastro</h1>
 
             <h3>Dados</h3>
 
             <div className="input">
-              <h5>Nome</h5>
+              <label htmlFor="nome">Nome</label>
               <input
+                id="nome"
                 value={nome}
                 required
                 type="text"
@@ -100,8 +99,9 @@ const Form: React.FC = () => {
 
             <div className="input-group">
               <div className="input">
-                <h5>CPF</h5>
+                <label htmlFor="CPF">CPF</label>
                 <InputMask
+                  id="CPF"
                   maskChar={null}
                   value={cpf}
                   mask="999.999.999-99"
@@ -114,8 +114,9 @@ const Form: React.FC = () => {
               </div>
 
               <div className="input">
-                <h5>E-mail</h5>
+                <label htmlFor="email">E-mail</label>
                 <input
+                  id="email"
                   value={email}
                   required
                   type="text"
@@ -130,8 +131,9 @@ const Form: React.FC = () => {
 
             <div className="input-group">
               <div className="input">
-                <h5>CEP</h5>
+                <label htmlFor="cep">CEP</label>
                 <InputMask
+                  id="cep"
                   maskChar={null}
                   value={cep}
                   mask="99.999-999"
@@ -142,8 +144,9 @@ const Form: React.FC = () => {
               </div>
 
               <div className="input">
-                <h5>Rua</h5>
+                <label htmlFor="rua">Rua</label>
                 <input
+                  id="rua"
                   value={rua}
                   required
                   type="text"
@@ -156,8 +159,9 @@ const Form: React.FC = () => {
 
             <div className="input-group">
               <div className="input">
-                <h5>Número</h5>
+                <label htmlFor="numero">Número</label>
                 <input
+                  id="numero"
                   value={numero}
                   required
                   type="number"
@@ -168,8 +172,9 @@ const Form: React.FC = () => {
               </div>
 
               <div className="input">
-                <h5>Bairro</h5>
+                <label htmlFor="bairro">Bairro</label>
                 <input
+                  id="bairro"
                   value={bairro}
                   required
                   type="text"
@@ -180,8 +185,9 @@ const Form: React.FC = () => {
               </div>
 
               <div className="input">
-                <h5>Cidade</h5>
+                <label htmlFor="cidade">Cidade</label>
                 <input
+                  id="cidade"
                   value={cidade}
                   required
                   type="text"
