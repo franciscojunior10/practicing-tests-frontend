@@ -1,10 +1,15 @@
 import React, { useState, useEffect, FormEvent } from 'react';
 import { useHistory } from 'react-router-dom';
+import { useToasts } from 'react-toast-notifications';
 
 import crypto from 'crypto';
 import { Container } from './styles';
 
+import imageLogin from '../../assets/Headerheader.svg';
+
 const Login: React.FC = () => {
+  const { addToast } = useToasts();
+
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
 
@@ -27,12 +32,15 @@ const Login: React.FC = () => {
 
     try {
       if (password.length < 4) {
-        alert('Senha deve conter mais de 4 digítos.');
+        addToast('Senha deve conter mais de 4 digítos.', {
+          appearance: 'error',
+          autoDismiss: true,
+        });
         return;
       }
 
       if (!verifyEmail(email)) {
-        alert('E-mail inválido.');
+        addToast('E-mail inválido.', { appearance: 'error', autoDismiss: true });
         return;
       }
 
@@ -48,6 +56,7 @@ const Login: React.FC = () => {
 
   return (
     <Container>
+      <img src={imageLogin} alt="main-logo" />
       <div className="content">
         <h1>Bem Vindo, faça seu Login</h1>
         <form onSubmit={handleLogin}>

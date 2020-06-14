@@ -2,6 +2,8 @@ import React, { useState, FormEvent, ChangeEvent } from 'react';
 import InputMask from 'react-input-mask';
 import axios from 'axios';
 
+import { useToasts } from 'react-toast-notifications';
+
 import api from '../../services/api';
 
 import Header from '../../components/Header';
@@ -15,12 +17,13 @@ interface ViaCep {
 }
 
 const Form: React.FC = () => {
+  const { addToast } = useToasts();
   const [nome, setNome] = useState<string>('');
   const [cpf, setCpf] = useState<string>('');
   const [email, setEmail] = useState<string>('');
-  const [cep, setCep] = useState<number>();
+  const [cep, setCep] = useState<number | string>('');
   const [rua, setRua] = useState<string>('');
-  const [numero, setNumero] = useState<number>();
+  const [numero, setNumero] = useState<number | string>('');
   const [bairro, setBairro] = useState<string>('');
   const [cidade, setCidade] = useState<string>('');
 
@@ -31,7 +34,6 @@ const Form: React.FC = () => {
       setCep(Number(cep));
       setCidade(res.data.localidade);
       setBairro(res.data.bairro);
-      setNumero(Number(res.data.gia));
       setRua(res.data.logradouro);
     });
   }
@@ -45,7 +47,7 @@ const Form: React.FC = () => {
 
     try {
       if (!verifyEmail(email)) {
-        alert('E-mail inválido.');
+        addToast('E-mail inválido.', { appearance: 'error', autoDismiss: true });
         return;
       }
 
@@ -64,9 +66,21 @@ const Form: React.FC = () => {
 
       await api.post('/', data);
 
-      alert('Cadastro realizado com sucesso.');
+      addToast('Cadastro realizado com sucesso.', { appearance: 'success', autoDismiss: true });
+
+      setNome('');
+      setCpf('');
+      setEmail('');
+      setCep('');
+      setCidade('');
+      setBairro('');
+      setNumero('');
+      setRua('');
     } catch (error) {
-      alert('Erro ao fazer o cadastro, tente novamente.');
+      addToast('Erro ao fazer o cadastro, tente novamente.', {
+        appearance: 'error',
+        autoDismiss: true,
+      });
     }
   }
 

@@ -81,4 +81,12 @@ export const Container = styled.div`
   .content form button:hover {
     filter: brightness(90%);
   }
+
+  @media screen and (max-width: 600px) {
+    .content form .input-group {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  }
 `;

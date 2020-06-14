@@ -9,6 +9,10 @@ export const Container = styled.div`
   max-width: 1120px;
   margin: 200px auto;
 
+  img {
+    margin-right: 100px;
+  }
+
   .content {
     display: flex;
     justify-content: center;

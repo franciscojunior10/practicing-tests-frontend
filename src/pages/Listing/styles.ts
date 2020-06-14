@@ -59,11 +59,25 @@ export const Container = styled.div`
     margin-top: 30px;
   }
 
-  .div-table .titles .th {
-    width: 100%;
+  .div-table .titles .th-nome {
+    width: 350px;
+  }
+
+  .div-table .titles .th-cpf {
+    width: 115px;
+  }
+
+  .div-table .titles .th-cidade {
+    width: 115px;
+  }
+
+  .div-table .rows {
+    background: #ffffff;
   }
 
   .button {
     text-decoration: none;
+    border: 0;
+    background: #ffff;
   }
 `;

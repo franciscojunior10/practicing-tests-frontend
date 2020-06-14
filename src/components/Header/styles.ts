@@ -19,6 +19,7 @@ export const Container = styled.div`
     .div-group a {
       margin-right: 30px;
       color: #ffffff;
+      font-size: 20px;
     }
 
     .div-group button {
@@ -28,6 +29,15 @@ export const Container = styled.div`
       display: inline-block;
       text-align: center;
       text-decoration: none;
+      font-size: 20px;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    header {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
   }
 `;
