@@ -3,7 +3,7 @@ import api from '../services/api';
 
 const apiMock = new AxiosMock(api);
 
-describe('Form', () => {
+describe('Edit user', () => {
   describe('Folder structure and data-testid attributes', () => {
     it('should be able to edit user', async () => {
       apiMock.onGet('/').reply(200, []);

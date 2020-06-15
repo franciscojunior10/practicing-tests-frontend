@@ -69,6 +69,7 @@ const Listing: React.FC = () => {
     try {
       await api.delete(`/${id}`);
       loadUsers();
+      addToast('Usuário deletado.', { appearance: 'success', autoDismiss: true });
     } catch (error) {
       addToast('Erro ao deletar, tente novamente.', {
         appearance: 'error',
@@ -143,7 +144,6 @@ const Listing: React.FC = () => {
               {users.map(handleUsersRow)}
             </table>
           </div>
-          {/* {users.length ? 0 : <h1 style={{ marginTop: '20px' }}>Nenhum usuário cadastrado.</h1>} */}
         </div>
         <ModalEditUser isOpen={modalOpen} setIsOpen={toggleModal} idUser={ID} />
       </Container>
