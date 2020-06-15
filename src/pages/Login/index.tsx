@@ -63,8 +63,9 @@ const Login: React.FC = () => {
       <div className="content">
         <h1>Bem Vindo, faça seu Login</h1>
         <form onSubmit={handleLogin}>
-          <h3>E-mail</h3>
+          <label htmlFor="email">E-mail</label>
           <input
+            id="email"
             value={email}
             required
             type="text"
@@ -72,8 +73,9 @@ const Login: React.FC = () => {
               setEmail(event.target.value);
             }}
           />
-          <h3>Senha</h3>
+          <label htmlFor="senha">Senha</label>
           <input
+            id="senha"
             value={password}
             required
             type="password"

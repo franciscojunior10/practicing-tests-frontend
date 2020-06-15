@@ -31,7 +31,7 @@ export const Container = styled.div`
     margin-top: 50px;
   }
 
-  .content form h3 {
+  .content form label {
     margin-top: 40px;
     line-height: 40px;
     color: #6c6c80;

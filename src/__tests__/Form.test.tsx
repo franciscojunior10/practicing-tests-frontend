@@ -2,12 +2,12 @@ import React from 'react';
 
 import { render } from '@testing-library/react';
 import AxiosMock from 'axios-mock-adapter';
-import api from '../../services/api';
+import api from '../services/api';
 import { ToastProvider } from 'react-toast-notifications';
 import { Router } from 'react-router-dom';
 import { createMemoryHistory } from 'history';
 
-import Form from '../../pages/Form';
+import Form from '../pages/Form';
 
 const history = createMemoryHistory();
 

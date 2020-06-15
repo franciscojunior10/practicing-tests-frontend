@@ -5,8 +5,8 @@ import { Router } from 'react-router-dom';
 import { createMemoryHistory } from 'history';
 import { ToastProvider } from 'react-toast-notifications';
 
-import Header from '../../components/Header';
-import ModalEditUser from '../../components/ModalEditUser';
+import Header from '../components/Header';
+import ModalEditUser from '../components/ModalEditUser';
 
 const history = createMemoryHistory();
 
