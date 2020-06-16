@@ -3,7 +3,7 @@
 ##### Resultado final da aplicação :heavy_check_mark:
 
 
-##### 1. Ativação do ambiente:
+# 1. Ativação do ambiente:
 ```
 - git clone: https://github.com/franciscojunior10/desafio-frontend-2sow.git
 - cd desafio-frontend-2sow
@@ -11,12 +11,12 @@
 - yarn start
 ```
 
-##### 2. Ativação do database:
+# 2. Ativação do database:
 ```
 - yarn database
 ```
 
-##### 3. Testes:
+# 3. Testes:
 ```
 - yarn test
 ```
