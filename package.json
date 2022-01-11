@@ -13,6 +13,7 @@
     "axios": "^0.19.2",
     "axios-mock-adapter": "^1.18.1",
     "history": "^4.10.1",
+    "jsdom": "^19.0.0",
     "json-server": "^0.16.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -31,7 +32,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
-    "database": "json-server --watch db.json --delay 2000 --port 5000"
+    "database": "json-server --watch db.json --delay 2000 --port 5000",
+    "test:coverage": "yarn test -- --env=jsdom --coverage --watchAll"
   },
   "eslintConfig": {
     "extends": "react-app"
