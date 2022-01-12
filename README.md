@@ -1,4 +1,4 @@
-# Desafio Frontend 2sow
+# Praticando testes no front end
 
 ##### Resultado final da aplicação :heavy_check_mark:
 
