@@ -65,6 +65,7 @@ const Login: React.FC = () => {
         <form onSubmit={handleLogin}>
           <label htmlFor="email">E-mail</label>
           <input
+            data-cy="email"
             id="email"
             value={email}
             required
@@ -75,6 +76,7 @@ const Login: React.FC = () => {
           />
           <label htmlFor="senha">Senha</label>
           <input
+            data-cy="senha"
             id="senha"
             value={password}
             required

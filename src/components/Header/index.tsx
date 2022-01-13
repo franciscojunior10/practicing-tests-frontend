@@ -23,7 +23,9 @@ const Header: React.FC<HeaderProps> = ({ nameButton, namePagina }) => {
         <h3>TOUSER</h3>
 
         <div className="div-group">
-          <Link to={`/${namePagina}`}>{nameButton}</Link>
+          <Link id="listingLink" to={`/${namePagina}`}>
+            {nameButton}
+          </Link>
           <button onClick={handleLogout}>Logout</button>
         </div>
       </header>

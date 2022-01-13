@@ -1,5 +1,5 @@
 {
-  "name": "desafio-frontend-2sow",
+  "name": "practicing-tests-frontend",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -33,7 +33,10 @@
     "eject": "react-scripts eject",
     "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
     "database": "json-server --watch db.json --delay 2000 --port 5000",
-    "test:coverage": "yarn test -- --env=jsdom --coverage --watchAll"
+    "test:coverage": "yarn test -- --env=jsdom --coverage --watchAll",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "teste:cypress": "start-server-and-test http-get://localhost:3000 cy:run"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -51,6 +54,8 @@
     ]
   },
   "devDependencies": {
+    "@cypress/react": "^5.12.1",
+    "@cypress/webpack-dev-server": "^1.8.0",
     "@types/react-input-mask": "^2.0.5",
     "@types/react-modal": "^3.10.5",
     "@types/react-router-dom": "^5.1.5",
@@ -58,11 +63,13 @@
     "@types/styled-components": "^5.1.0",
     "@typescript-eslint/eslint-plugin": "^3.2.0",
     "@typescript-eslint/parser": "^3.2.0",
+    "cypress": "^9.2.1",
     "eslint": "6.6.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.3",
     "eslint-plugin-react": "^7.20.0",
-    "prettier": "^2.0.5"
+    "prettier": "^2.0.5",
+    "start-server-and-test": "^1.14.0"
   }
 }

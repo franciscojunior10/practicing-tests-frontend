@@ -28,15 +28,15 @@ const Form: React.FC = () => {
   const [bairro, setBairro] = useState<string>('');
   const [cidade, setCidade] = useState<string>('');
 
-  function handleSelectCEP(event: ChangeEvent<HTMLInputElement>) {
-    const cep = event.target.value.replace('.', '').replace('-', '');
-    setCep(Number(cep));
-    axios.get<ViaCep>(`https://viacep.com.br/ws/${cep}/json/`).then(res => {
-      setCidade(res.data.localidade);
-      setBairro(res.data.bairro);
-      setRua(res.data.logradouro);
-    });
-  }
+  // function handleSelectCEP(event: ChangeEvent<HTMLInputElement>) {
+  //   const cep = event.target.value.replace('.', '').replace('-', '');
+  //   setCep(Number(cep));
+  //   axios.get<ViaCep>(`https://viacep.com.br/ws/${cep}/json/`).then(res => {
+  //     setCidade(res.data.localidade);
+  //     // setBairro(res.data.bairro);
+  //     // setRua(res.data.logradouro);
+  //   });
+  // }
 
   function verifyEmail(email: string) {
     return !!email.match(/.+@.+/);
@@ -66,6 +66,15 @@ const Form: React.FC = () => {
       await api.post('/', data);
 
       addToast('Cadastro realizado com sucesso.', { appearance: 'success', autoDismiss: true });
+
+      setNome('');
+      setCpf('');
+      setEmail('');
+      setCep(0);
+      setRua('');
+      setNumero(0);
+      setBairro('');
+      setCidade('');
     } catch (error) {
       addToast('Erro ao fazer o cadastro, tente novamente.', {
         appearance: 'error',
@@ -87,6 +96,7 @@ const Form: React.FC = () => {
             <div className="input">
               <label htmlFor="nome">Nome</label>
               <input
+                data-cy="nome"
                 id="nome"
                 value={nome}
                 required
@@ -101,6 +111,7 @@ const Form: React.FC = () => {
               <div className="input">
                 <label htmlFor="CPF">CPF</label>
                 <InputMask
+                  data-cy="cpf"
                   id="CPF"
                   maskChar={null}
                   value={cpf}
@@ -116,6 +127,7 @@ const Form: React.FC = () => {
               <div className="input">
                 <label htmlFor="email">E-mail</label>
                 <input
+                  data-cy="email"
                   id="email"
                   value={email}
                   required
@@ -133,19 +145,21 @@ const Form: React.FC = () => {
               <div className="input">
                 <label htmlFor="cep">CEP</label>
                 <InputMask
+                  data-cy="cep"
                   id="cep"
                   maskChar={null}
                   value={cep}
                   mask="99.999-999"
                   required
                   type="text"
-                  onChange={handleSelectCEP}
+                  // onChange={handleSelectCEP}
                 />
               </div>
 
               <div className="input">
                 <label htmlFor="rua">Rua</label>
                 <input
+                  data-cy="rua"
                   id="rua"
                   value={rua}
                   required
@@ -161,6 +175,7 @@ const Form: React.FC = () => {
               <div className="input">
                 <label htmlFor="numero">Número</label>
                 <input
+                  data-cy="numero"
                   id="numero"
                   value={numero}
                   required
@@ -174,6 +189,7 @@ const Form: React.FC = () => {
               <div className="input">
                 <label htmlFor="bairro">Bairro</label>
                 <input
+                  data-cy="bairro"
                   id="bairro"
                   value={bairro}
                   required
@@ -187,6 +203,7 @@ const Form: React.FC = () => {
               <div className="input">
                 <label htmlFor="cidade">Cidade</label>
                 <input
+                  data-cy="cidade"
                   id="cidade"
                   value={cidade}
                   required
