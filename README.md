@@ -1,5 +1,5 @@
 <h3 align="center">
-  Praticando testes no front
+  Praticando testes no front com cypress
 </h3>
 
 <p align="center">
