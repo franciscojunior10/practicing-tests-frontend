@@ -12,7 +12,7 @@ const Header: React.FC<HeaderProps> = ({ nameButton, namePagina }) => {
   const history = useHistory();
 
   function handleLogout() {
-    localStorage.clear();
+    localStorage.removeItem('@tokenGenereted');
 
     history.push('/');
   }

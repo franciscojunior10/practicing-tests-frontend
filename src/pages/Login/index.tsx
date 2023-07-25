@@ -1,6 +1,8 @@
 import React, { useState, useEffect, FormEvent } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useToasts } from 'react-toast-notifications';
+import introJs from 'intro.js';
+import 'intro.js/introjs.css';
 
 import crypto from 'crypto';
 import { Container } from './styles';
@@ -57,6 +59,42 @@ const Login: React.FC = () => {
     }
   }
 
+  useEffect(() => {
+    const intro = introJs();
+    const tutorialDone = localStorage.getItem('@tutorial:done');
+
+    if (!tutorialDone) {
+      intro.setOptions({
+        steps: [
+          {
+            intro: 'Bem-vindo ao tutorial!',
+          },
+          {
+            element: '#email',
+            intro: 'Insira seu e-mail aqui',
+          },
+          {
+            element: '#senha',
+            intro: 'Insira sua senha aqui',
+          },
+          {
+            element: '#entrar',
+            intro: 'Botão de confirmação',
+          },
+        ],
+      });
+
+      intro.start();
+      intro.oncomplete(function () {
+        localStorage.setItem('@tutorial:done', 'true');
+      });
+
+      return () => {
+        intro.exit();
+      };
+    }
+  }, []);
+
   return (
     <Container>
       <img src={imageLogin} alt="main-logo" />
@@ -85,7 +123,9 @@ const Login: React.FC = () => {
               setPassword(event.target.value);
             }}
           />
-          <button type="submit">ENTRAR</button>
+          <button id="entrar" type="submit">
+            ENTRAR
+          </button>
         </form>
       </div>
     </Container>

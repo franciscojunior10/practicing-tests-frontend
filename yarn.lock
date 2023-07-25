@@ -1730,6 +1730,11 @@
     "@types/react" "*"
     hoist-non-react-statics "^3.3.0"
 
+"@types/intro.js@^5.1.1":
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/@types/intro.js/-/intro.js-5.1.1.tgz#bcb525b84ccffd2ca3ae7f722142d5b3ffd3539f"
+  integrity sha512-gxrfhzwHeCZI8PoucIVRCe5cX0j29YYB1YLIfPb87HN1HiAhrl0CGMFuYPzo6Gvn5diAPCHF6XW2SR+Lqxexlg==
+
 "@types/istanbul-lib-coverage@*", "@types/istanbul-lib-coverage@^2.0.0":
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/@types/istanbul-lib-coverage/-/istanbul-lib-coverage-2.0.3.tgz#4ba8ddb720221f432e443bd5f9117fd22cfd4762"
@@ -6592,6 +6597,11 @@ internal-slot@^1.0.2:
     has "^1.0.3"
     side-channel "^1.0.2"
 
+intro.js@^7.0.1:
+  version "7.0.1"
+  resolved "https://registry.yarnpkg.com/intro.js/-/intro.js-7.0.1.tgz#65bfebe5fea7b54b79f24ebc8e059f9f62eb28af"
+  integrity sha512-1oqz6aOz9cGQ3CrtVYhCSo6AkjnXUn302kcIWLaZ3TI4kKssRXDwDSz4VRoGcfC1jN+WfaSJXRBrITz+QVEBzg==
+
 invariant@^2.2.2, invariant@^2.2.4:
   version "2.2.4"
   resolved "https://registry.yarnpkg.com/invariant/-/invariant-2.2.4.tgz#610f3c92c9359ce1db616e538008d23ff35158e6"
@@ -10350,6 +10360,11 @@ react-input-mask@^2.0.4:
   dependencies:
     invariant "^2.2.4"
     warning "^4.0.2"
+
+react-introjs@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/react-introjs/-/react-introjs-1.1.1.tgz#32fd90adbf3e80d0f15c06337555e291bf2449da"
+  integrity sha512-fLTpyKj1L1H3+V06qCwqZeCej9RKvUFH/AqoextvgLK4KvwtTE3k9R6q0Ze33qIlDzjMkovjShbdJ0HUf0d1zw==
 
 react-is@^16.12.0, react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.1, react-is@^16.8.4:
   version "16.13.1"

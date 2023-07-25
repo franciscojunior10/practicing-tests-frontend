@@ -1,6 +1,5 @@
-import React, { useState, FormEvent, ChangeEvent } from 'react';
+import React, { useState, FormEvent } from 'react';
 import InputMask from 'react-input-mask';
-import axios from 'axios';
 
 import { useToasts } from 'react-toast-notifications';
 
